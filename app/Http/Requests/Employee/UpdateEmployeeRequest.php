@@ -24,9 +24,9 @@ class UpdateEmployeeRequest extends FormRequest
         return [
             'first_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
-            'company_id' => 'exists:companies,id',
-            'email' => 'nullable|email|unique:employees,email',
-            'phone' => 'nullable|string|max:255'
+            'email' => 'required|email|max:255',
+            'phone' => 'required|string|max:255',
+            'company_id' => 'required|integer|exists:companies,id',
         ];
     }
 }

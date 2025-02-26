@@ -48,7 +48,9 @@ class EmployeeController extends Controller
     public function update (UpdateEmployeeRequest $request, string $id)
     {
         $employee = Employee::findOrFail($id);
-        $employee->update($request->validated());
+        $validated_data = $request->validated();
+
+        $employee->update($validated_data);
 
         return response()->json(['message' => 'Employee updated successfully', 'data' => $employee]);
     }

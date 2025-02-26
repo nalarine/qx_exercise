@@ -15,7 +15,7 @@
                         <label for="first_name" class="block text-sm font-medium text-gray-700">First Name</label>
                         <input type="text" name="first_name" id="first_name" class="mt-1 block w-full" value="{{ $employee->first_name }}" required>
                     </div>
-                      <div class="mb-4">
+                    <div class="mb-4">
                         <label for="last_name" class="block text-sm font-medium text-gray-700">Last Name</label>
                         <input type="text" name="last_name" id="last_name" class="mt-1 block w-full" value="{{ $employee->last_name }}" required>
                     </div>
@@ -24,9 +24,13 @@
                         <input type="email" name="email" id="email" class="mt-1 block w-full" value="{{ $employee->email }}" required>
                     </div>
                     <div class="mb-4">
+                        <label for="phone" class="block text-sm font-medium text-gray-700">Phone</label>
+                        <input type="phone" name="phone" id="phone" class="mt-1 block w-full" value="{{ $employee->phone }}" required>
+                    </div>
+                    <div class="mb-4">
                         <label for="company_id" class="block text-sm font-medium text-gray-700">Company</label>
                         <select name="company_id" id="company_id" class="mt-1 block w-full" required>
-                            @foreach($companies as $company)
+                            @foreach ($companies as $company)
                                 <option value="{{ $company->id }}" {{ $company->id == $employee->company_id ? 'selected' : '' }}>{{ $company->name }}</option>
                             @endforeach
                         </select>

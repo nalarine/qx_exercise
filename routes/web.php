@@ -18,6 +18,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::resource('companies', CompanyController::class);
     Route::resource('employees', EmployeeController::class);
+    Route::get('/companies', [CompanyController::class, 'index'])->name('companies.index');
+    Route::get('/employees', [EmployeeController::class, 'index'])->name('employees.index');
     Route::get('/companies/create', [CompanyController::class, 'create'])->name('companies.create');
     Route::get('/employees/create', [EmployeeController::class, 'create'])->name('employees.create');
     Route::get('/companies/{id}/edit', [CompanyController::class, 'edit'])->name('companies.edit');

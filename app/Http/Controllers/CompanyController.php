@@ -41,7 +41,7 @@ class CompanyController extends Controller
 
         $company = Company::create($data);
 
-        return response()->json(['message' => 'Company created successfully', 'data' => $company]);
+        return redirect()->route('companies.index')->with('success', 'Company created successfully');
     }
 
     /**
@@ -83,7 +83,7 @@ class CompanyController extends Controller
 
         $company->update($validated_data);
 
-        return response()->json(['message' => 'Company updated successfully', 'data' => $company]);
+        return redirect()->route('companies.index')->with('success', 'Company updated successfully');
     }
 
     /**
