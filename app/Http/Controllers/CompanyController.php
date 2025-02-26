@@ -41,7 +41,7 @@ class CompanyController extends Controller
 
         $company = Company::create($data);
 
-        return redirect()->route('companies.index')->with('success', 'Company created successfully');
+        return redirect()->route('dashboard')->with('success', 'Company created successfully');
     }
 
     /**
@@ -83,7 +83,7 @@ class CompanyController extends Controller
 
         $company->update($validated_data);
 
-        return redirect()->route('companies.index')->with('success', 'Company updated successfully');
+        return redirect()->route('dashboard')->with('success', 'Company updated successfully');
     }
 
     /**

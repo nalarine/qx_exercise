@@ -35,7 +35,7 @@ class EmployeeController extends Controller
     {
         $employee = Employee::create($request->validated());
 
-        return response()->json(['message' => 'Employee created successfully', 'data' => $employee]);
+        return redirect()->route('dashboard')->with('success', 'Employee created successfully');
     }
 
     public function edit (string $id) 
@@ -52,7 +52,7 @@ class EmployeeController extends Controller
 
         $employee->update($validated_data);
 
-        return response()->json(['message' => 'Employee updated successfully', 'data' => $employee]);
+        return redirect()->route('dashboard')->with('success', 'Employee updated successfully');
     }
 
     public function destroy (string $id)

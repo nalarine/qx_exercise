@@ -11,8 +11,8 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $companies = Company::all();
-        $employees = Employee::all();
+        $companies = Company::paginate(10);
+    $employees = Employee::paginate(10);
 
         return view('dashboard', compact('companies', 'employees'));
     }
