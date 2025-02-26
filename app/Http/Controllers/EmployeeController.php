@@ -38,6 +38,13 @@ class EmployeeController extends Controller
         return response()->json(['message' => 'Employee created successfully', 'data' => $employee]);
     }
 
+    public function edit (string $id) 
+    {
+        $employee = Employee::findOrFail($id);
+        $companies = Company::all();
+        return view('employees.edit', compact('employee', 'companies'));
+    }
+
     public function update (UpdateEmployeeRequest $request, string $id)
     {
         $employee = Employee::findOrFail($id);

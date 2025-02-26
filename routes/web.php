@@ -16,13 +16,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::resource('companies', CompanyController::class);
+    Route::resource('employees', EmployeeController::class);
+    Route::get('/companies/create', [CompanyController::class, 'create'])->name('companies.create');
+    Route::get('/employees/create', [EmployeeController::class, 'create'])->name('employees.create');
+    Route::get('/companies/{id}/edit', [CompanyController::class, 'edit'])->name('companies.edit');
+    Route::get('/employees/{id}/edit', [EmployeeController::class, 'edit'])->name('employees.edit');
 });
-
-Route::resource('companies', CompanyController::class)->middleware('auth');
-Route::resource('employees', EmployeeController::class)->middleware('auth');
-Route::resource('companies', CompanyController::class);
-Route::resource('employees', EmployeeController::class);
-Route::get('/companies/create', [CompanyController::class, 'create'])->name('companies.create');
-Route::get('/employees/create', [EmployeeController::class, 'create'])->name('employees.create');
 
 require __DIR__.'/auth.php';

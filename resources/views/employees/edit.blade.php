@@ -12,16 +12,16 @@
                     @csrf
                     @method('PUT')
                     <div class="mb-4">
-                        <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
-                        <input type="text" name="name" id="name" class="mt-1 block w-full" value="{{ $employee->name }}" required>
+                        <label for="first_name" class="block text-sm font-medium text-gray-700">First Name</label>
+                        <input type="text" name="first_name" id="first_name" class="mt-1 block w-full" value="{{ $employee->first_name }}" required>
+                    </div>
+                      <div class="mb-4">
+                        <label for="last_name" class="block text-sm font-medium text-gray-700">Last Name</label>
+                        <input type="text" name="last_name" id="last_name" class="mt-1 block w-full" value="{{ $employee->last_name }}" required>
                     </div>
                     <div class="mb-4">
                         <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
                         <input type="email" name="email" id="email" class="mt-1 block w-full" value="{{ $employee->email }}" required>
-                    </div>
-                    <div class="mb-4">
-                        <label for="position" class="block text-sm font-medium text-gray-700">Position</label>
-                        <input type="text" name="position" id="position" class="mt-1 block w-full" value="{{ $employee->position }}" required>
                     </div>
                     <div class="mb-4">
                         <label for="company_id" class="block text-sm font-medium text-gray-700">Company</label>

@@ -24,7 +24,7 @@ class UpdateCompanyRequest extends FormRequest
         return [
             'name' => 'sometimes|required|string|max:255',
             'email' => 'nullable|email|unique:companies,email',
-            'logo' => 'nullable|image|dimensions:min_width=100,min_height=100',
+            'logo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|dimensions:min_width=100,min_height=100|max:2048',
             'website' => 'nullable|url'
         ];
     }

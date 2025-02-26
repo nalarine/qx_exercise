@@ -59,6 +59,7 @@ class CompanyController extends Controller
      */
     public function edit(string $id)
     {
+        $company = Company::findOrFail($id);
         return view('companies.edit', compact('company'));
     }
 
@@ -77,7 +78,7 @@ class CompanyController extends Controller
             }
 
             $path = $request->file('logo')->store('logos', 'public');
-            $validate_data['logo'] = $path;
+            $validated_data['logo'] = $path;
         }
 
         $company->update($validated_data);
@@ -101,4 +102,3 @@ class CompanyController extends Controller
         return response()->json(['message' => 'Company deleted successfully']);
     }
 }
-   

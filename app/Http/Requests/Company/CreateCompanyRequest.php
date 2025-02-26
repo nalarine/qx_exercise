@@ -23,9 +23,9 @@ class CreateCompanyRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:255',
-            'email' => 'nullable|email|unique:companies,email',
-            'logo' => 'nullable|image|mimes:jpg,jpeg,png|dimensions:min_width=100,min_height=100',
-            'website' => 'nullable|url'
+            'email' => 'required|email|max:255',
+            'logo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|dimensions:min_width=100,min_height=100|max:2048',
+            'website' => 'required|string|max:255'
         ];
     }
 }
